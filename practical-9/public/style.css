@@ -1,0 +1,27 @@
+/* Reset & basic styling */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
+
+header { background: linear-gradient(135deg, #6C63FF, #FF6584); color: #fff; padding: 80px 20px; text-align: center; }
+header .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+header .hero p { font-size: 1.2rem; margin-bottom: 20px; }
+header .hero button { padding: 12px 30px; font-size: 1rem; border-radius: 30px; border: none; cursor: pointer; transition: 0.3s; background: #fff; color: #6C63FF; }
+header .hero button:hover { background: #6C63FF; color: #fff; }
+
+main { padding: 40px 20px; }
+
+/* Features */
+.features { text-align: center; margin-bottom: 50px; }
+.features h2 { margin-bottom: 20px; font-size: 2rem; }
+.feature-card { display: inline-block; background: #fff; padding: 20px; margin: 10px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); min-width: 200px; transition: transform 0.3s; }
+.feature-card:hover { transform: translateY(-10px); }
+
+/* Testimonials */
+.testimonials { text-align: center; margin-bottom: 50px; }
+.testimonial-card { background: #fff; margin: 10px auto; padding: 20px; max-width: 300px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+
+/* Contact Form */
+.contact { max-width: 500px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
+.contact input, .contact textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc; }
+.contact button { padding: 12px 25px; border: none;
+}
