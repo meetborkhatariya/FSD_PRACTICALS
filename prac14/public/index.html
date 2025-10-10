@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Upload Resume</title>
+    <style>
+      body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+      .container { border: 1px solid #ddd; padding: 20px; border-radius: 6px; }
+      input[type=file] { display:block; margin-bottom: 10px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upload your resume (PDF, max 2MB)</h1>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="resume" accept="application/pdf" required />
+        <button type="submit">Upload</button>
+      </form>
+      <div id="msg"></div>
+    </div>
+    <script>
+      const form = document.getElementById('uploadForm');
+      const msg = document.getElementById('msg');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const resp = await fetch('/upload', { method: 'POST', body: fd });
+        const data = await resp.json();
+        msg.textContent = data.message;
+      });
+    </script>
+  </body>
+</html>
