@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tax Form - Total Income</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Enter Income from Two Sources</h1>
+
+    <% if (errors && errors.length) { %>
+      <div class="errors" role="alert">
+        <ul>
+          <% errors.forEach(function(err) { %>
+            <li><%= err.msg %></li>
+          <% }); %>
+        </ul>
+      </div>
+    <% } %>
+
+    <form action="/calculate" method="POST" novalidate>
+      <label for="sourceA">Income - Source A</label>
+      <input id="sourceA" name="sourceA" type="text" inputmode="decimal" value="<%= values.sourceA %>" autocomplete="off" />
+
+      <label for="sourceB">Income - Source B</label>
+      <input id="sourceB" name="sourceB" type="text" inputmode="decimal" value="<%= values.sourceB %>" autocomplete="off" />
+
+      <button type="submit">Calculate Total</button>
+    </form>
+
+    <% if (total !== null) { %>
+      <section class="result" aria-live="polite">
+        <h2>Total Income</h2>
+        <p class="amount">$<%= Number(total).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) %></p>
+      </section>
+    <% } %>
+
+    <footer>
+      <p>Results are calculated on the server to ensure correctness.</p>
+    </footer>
+  </main>
+</body>
+</html>
