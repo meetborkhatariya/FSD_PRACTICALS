@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Library Portal - Login</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; }
+    .container { max-width: 400px; margin: 0 auto; }
+    label, input { display: block; width: 100%; margin-bottom: 0.5rem; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <form method="POST" action="/login">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" placeholder="Your name" />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>

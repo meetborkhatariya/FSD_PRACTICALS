@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Library Portal - Profile</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; }
+    .container { max-width: 600px; margin: 0 auto; }
+    .info { background: #f9f9f9; padding: 1rem; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, <%= user.name %></h1>
+
+    <div class="info">
+      <p><strong>Login Time:</strong> <%= new Date(user.loginTime).toLocaleString() %></p>
+      <form method="POST" action="/logout">
+        <button type="submit">Logout</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
