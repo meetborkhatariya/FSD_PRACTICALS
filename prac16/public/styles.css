@@ -1,0 +1,11 @@
+:root{--bg:#f6f8fb;--card:#fff;--accent:#0366d6;--muted:#666}
+*{box-sizing:border-box;font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif}
+body{background:var(--bg);margin:0;padding:40px}
+.contact{max-width:680px;margin:0 auto;background:var(--card);padding:28px;border-radius:12px;box-shadow:0 6px 18px rgba(3,6,20,0.08)}
+.contact h1{margin:0 0 18px}
+.contact label{display:block;margin-top:12px;color:var(--muted);font-size:14px}
+.contact input,.contact textarea{width:100%;padding:10px;border:1px solid #e3e8ef;border-radius:8px;margin-top:6px}
+.contact button{margin-top:16px;background:var(--accent);color:#fff;border:none;padding:10px 16px;border-radius:8px;cursor:pointer}
+#status{margin-top:14px;font-size:15px}
+#status.success{color:green}
+#status.error{color:#c62828}
